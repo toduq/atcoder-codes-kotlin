@@ -1,0 +1,29 @@
+package __REPLACE_WITH_PACKAGE_NAME__
+
+fun main() {
+    val t = Thread(null, __REPLACE_WITH_CLASS__::solve, "s", 64_000_000)
+    t.setUncaughtExceptionHandler { _, e -> e.printStackTrace(); kotlin.system.exitProcess(1) }
+    t.apply { start() }.join()
+}
+
+/** __REPLACE_WITH_URL__ **/ // REMOVE_LINE_ON_SUBMIT
+object __REPLACE_WITH_CLASS__ {
+    fun solve() {
+
+    }
+
+    fun line(): String = readLine()!!.trimEnd()
+    fun long(): Long = line().toLong()
+    fun longs(): List<Long> = line().split(" ").map { it.toLong() }
+}
+
+// REMOVE_BELOW_ON_SUBMIT
+
+class __REPLACE_WITH_CLASS__Test {
+    @org.junit.jupiter.api.TestFactory
+    fun test() = lib.runTest(testCase, __REPLACE_WITH_CLASS__::solve)
+}
+
+private val testCase = """
+__REPLACE_WITH_TEST_CASE__
+""".trimIndent()
